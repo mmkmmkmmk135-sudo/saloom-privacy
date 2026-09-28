@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Saloom Support | دعم سلوم</title>
+  <meta name="description" content="Official support page for Saloom student transport users.">
+  <style>
+    :root{font-family:Inter,Tahoma,Arial,system-ui,sans-serif;color:#19172f;background:#f7f6fb}
+    body{margin:0}.wrap{max-width:880px;margin:auto;padding:38px 20px 70px}
+    header,main{background:#fff;border:1px solid #e7e4ef;border-radius:22px;padding:28px;box-shadow:0 8px 28px #2116420d}
+    main{margin-top:18px}h1{margin:8px 0;font-size:32px}h2{margin-top:30px;font-size:21px}
+    p{line-height:1.85;color:#45415a}.brand{font-weight:900;letter-spacing:.08em;color:#6b3fc6}
+    .notice{margin-top:18px;padding:14px 16px;border-radius:12px;background:#f0eafe;color:#4d2c8d}
+    .contact{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:20px}
+    .card{border:1px solid #e7e4ef;border-radius:16px;padding:18px;background:#fbfafe}.card strong{display:block;margin-bottom:6px}
+    .button{display:inline-block;margin-top:10px;padding:11px 15px;border-radius:11px;background:#6037b6;color:#fff;text-decoration:none;font-weight:700}
+    .nav{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.nav a,.lang button{border:1px solid #ded6ef;background:#fff;color:#6037b6;border-radius:999px;padding:8px 13px;text-decoration:none;font-weight:700;cursor:pointer}
+    .lang{display:flex;gap:8px;margin-bottom:14px}.lang button.active{background:#6037b6;color:#fff;border-color:#6037b6}
+    a{color:#6037b6}footer{margin-top:22px;text-align:center;font-size:13px;color:#777287}.en{direction:ltr;text-align:left}.ar{direction:rtl;text-align:right}
+  </style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="brand">SALOOM · سلوم</div>
+  <div class="lang"><button id="arBtn" onclick="setLang('ar')">العربية</button><button id="enBtn" onclick="setLang('en')">English</button></div>
+  <div class="ar lang-block">
+    <h1>دعم سلوم</h1>
+    <div class="notice">للمساعدة في الحساب أو الرحلات أو التطبيق، تواصل مع فريق دعم سلوم عبر الهاتف أو البريد الإلكتروني.</div>
+  </div>
+  <div class="en lang-block">
+    <h1>Saloom Support</h1>
+    <div class="notice">For help with your account, trips, or the app, contact the Saloom support team by phone or email.</div>
+  </div>
+  <div class="nav">
+    <a href="./?lang=ar">سياسة الخصوصية / Privacy Policy</a>
+    <a href="terms.html?lang=ar">شروط الاستخدام / Terms of Use</a>
+    <a href="delete-account.html">حذف الحساب / Account deletion</a>
+  </div>
+</header>
+<main>
+<section class="ar lang-block">
+  <h2>بيانات التواصل</h2>
+  <div class="contact">
+    <div class="card"><strong>الهاتف</strong><div>0774 643 3779</div><a class="button" href="tel:+9647746433779">اتصل بفريق دعم سلوم</a></div>
+    <div class="card"><strong>البريد الإلكتروني</strong><div>saloom.business@gmail.com</div><a class="button" href="mailto:saloom.business@gmail.com?subject=Saloom%20Support">إرسال بريد إلكتروني</a></div>
+  </div>
+  <h2>روابط مهمة</h2>
+  <p><a href="./?lang=ar">سياسة الخصوصية</a> · <a href="terms.html?lang=ar">شروط الاستخدام</a> · <a href="delete-account.html">طلب حذف الحساب</a></p>
+  <p>للحالات المتعلقة بالسلامة أثناء النقل، استخدم أيضاً أدوات الإبلاغ التشغيلية داخل التطبيق عند توفرها. لا تمثل سلوم خدمة طوارئ أو إسعاف أو شرطة.</p>
+</section>
+<section class="en lang-block">
+  <h2>Contact details</h2>
+  <div class="contact">
+    <div class="card"><strong>Phone</strong><div>0774 643 3779</div><a class="button" href="tel:+9647746433779">Call Saloom Support</a></div>
+    <div class="card"><strong>Email</strong><div>saloom.business@gmail.com</div><a class="button" href="mailto:saloom.business@gmail.com?subject=Saloom%20Support">Email Saloom Support</a></div>
+  </div>
+  <h2>Important links</h2>
+  <p><a href="./?lang=en">Privacy Policy</a> · <a href="terms.html?lang=en">Terms of Use</a> · <a href="delete-account.html">Account deletion</a></p>
+  <p>For transport-safety incidents, you may also use the operational reporting tools inside the app when available. Saloom is not an emergency, ambulance, or police service.</p>
+</section>
+</main>
+<footer>© 2026 Saloom · سلوم</footer>
+</div>
+<script>
+function setLang(lang){const ar=lang==='ar';document.documentElement.lang=lang;document.documentElement.dir=ar?'rtl':'ltr';document.querySelectorAll('.lang-block').forEach(x=>x.style.display=x.classList.contains(lang)?'block':'none');document.getElementById('arBtn').classList.toggle('active',ar);document.getElementById('enBtn').classList.toggle('active',!ar);history.replaceState(null,'','?lang='+lang)}
+const initial=new URLSearchParams(location.search).get('lang')==='en'?'en':'ar';setLang(initial);
+</script>
+</body>
+</html>
